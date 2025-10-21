@@ -1,0 +1,208 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+
+    <title>JayChoDev</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background-animation">
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="ball"></div>
+    </div>
+
+    <header class="site-header">
+      <div class="header-content">
+        <img
+          src="./LogosIcones/IconePerfil/ProfileGhimbli-400x400 (1).jpg"
+          alt="Minha Foto"
+          class="perfil-foto"
+        />
+
+        <div class="theme-switch-wrapper">
+          <label class="theme-switch" for="theme-toggle">
+            <input type="checkbox" id="theme-toggle" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <h1>JayChouDev</h1>
+      </div>
+    </header>
+
+    <main class="site-main">
+      <p class="apresentacao">Desenvolvedor Full-Stack</p>
+      <p class="apresentacao">
+        Olá, eu sou o JayChouDev, um desenvolvedor Full-Stack <br />apaixonado
+        por criar experiências digitais incríveis.
+      </p>
+      <p class="apresentacao2">Visite Minhas redes!</p>
+      <nav class="links-container">
+        <!-- Portfólio -->
+        <a
+          href="https://port-folio-do-jay-ow1l.vercel.app/index.html"
+          class="link-card"
+        >
+          <img
+            src="./LogosIcones/IconeRedesSociais/portfolio.png"
+            alt="Ícone Portfólio"
+            class="link-icon"
+          />
+          PORTFÓLIO
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/JayChouDev" class="link-card">
+          <img
+            src="./LogosIcones/IconeRedesSociais/github-6980894_640.png"
+            alt="Ícone GitHub"
+            class="link-icon"
+          />
+          GITHUB
+        </a>
+
+        <!-- LinkedIn -->
+        <a
+          href="https://www.linkedin.com/in/kauã-medeiros-honorato-3495a0344/"
+          class="link-card"
+        >
+          <img
+            src="./LogosIcones/IconeRedesSociais/icone-linkedin-ronde-originale.png"
+            alt="Ícone LinkedIn"
+            class="link-icon"
+          />
+          LINKEDIN
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/jaychoudev/" class="link-card">
+          <img
+            src="./LogosIcones/IconeRedesSociais/instagram.png"
+            alt="Ícone Instagram"
+            class="link-icon"
+          />
+          INSTAGRAM
+        </a>
+
+        <!-- TikTok -->
+        <a
+          href="https://www.tiktok.com/@jaychoudev?_t=ZM-8ww1r5XJuy5&_r=1"
+          class="link-card"
+        >
+          <img
+            src="./LogosIcones/IconeRedesSociais/TIKTOK ICONE.png"
+            alt="Ícone TikTok"
+            class="link-icon"
+          />
+          TIK TOK
+        </a>
+
+        <!-- Discord -->
+        <a href="https://discord.gg/evCqTaX2RU" class="link-card">
+          <img
+            src="./LogosIcones/IconeRedesSociais/discord-logo-4-1.png"
+            alt="Ícone Discord"
+            class="link-icon"
+          />
+          DISCORD
+        </a>
+      </nav>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p class="skills-title">Skills</p>
+        <div class="icones-footer">
+          <img
+            src="./LogosIcones/Iconestecnologias/html5.png"
+            alt="HTML Icon"
+            class="icone"
+            title="HTML5"
+            loading="lazy"
+          />
+          <img
+            src="./LogosIcones/Iconestecnologias/css 3.png"
+            alt="CSS Icon"
+            class="icone"
+            title="CSS3"
+            loading="lazy"
+          />
+          <img
+            src="./LogosIcones/Iconestecnologias/javascript.png"
+            alt="JS Icon"
+            class="icone"
+            title="JavaScript"
+            loading="lazy"
+          />
+          <img
+            src="./LogosIcones/Iconestecnologias/icons8-logo-java-coffee-cup-480 (1).png"
+            alt="JAVA Icon"
+            class="icone"
+            title="Java"
+            loading="lazy"
+          />
+          <img
+            src="./LogosIcones/Iconestecnologias/icons8-sql-96.png"
+            alt="SQL Icon"
+            class="icone"
+            title="SQL"
+            loading="lazy"
+          />
+        </div>
+        <p>&copy; 2025 JayChouDev. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- modo escuro -->
+    <script>
+      const html = document.documentElement;
+      const toggle = document.getElementById("theme-toggle");
+
+      // Verifica se o usuário já tinha uma preferência salva no localStorage
+      const savedTheme = localStorage.getItem("theme");
+
+      if (savedTheme) {
+        // Se houver uma preferência salva, aplica-a
+        html.setAttribute("data-theme", savedTheme);
+        toggle.checked = savedTheme === "dark";
+      } else {
+        // Se não houver preferência salva, define o modo escuro como padrão
+        // e salva essa preferência para futuras visitas.
+        html.setAttribute("data-theme", "dark");
+        toggle.checked = true;
+        localStorage.setItem("theme", "dark");
+      }
+
+      toggle.addEventListener("change", () => {
+        if (toggle.checked) {
+          html.setAttribute("data-theme", "dark");
+          localStorage.setItem("theme", "dark");
+        } else {
+          html.setAttribute("data-theme", "light");
+          localStorage.setItem("theme", "light");
+        }
+      });
+    </script>
+
+    <!-- Script para corrigir a altura do viewport (vh) no iOS/Safari -->
+    <script>
+      const setVhVariable = () => {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+      };
+
+      window.addEventListener("resize", setVhVariable);
+      window.addEventListener("load", setVhVariable);
+      setVhVariable(); // Executa na primeira carga
+    </script>
+  </body>
+</html>
